@@ -1,0 +1,57 @@
+<form method="post" action="?subtopic=gifts">
+	<input type="hidden" name="action" value="admin_add"/>
+	<select name="type" id="type">
+		<option value="item">Item</option>
+		<option value="container">Container with Items</option>
+		<option value="addon">Addon</option>
+		<option value="mount">Mount</option>
+		<option value="pacc">Premium Account</option>
+	</select></br>
+	<input type="number" name="points" placeholder="Points" required/><br/>
+	<input type="text" name="name" placeholder="Offer Name" required/><br/>
+	<textarea name="description" rows="5" cols="50" placeholder="Offer Description (you can use HTML) (can be empty)"></textarea>
+	<div id="extra"></div>
+	<input type="submit" value="Add"/>
+</form>
+
+<script type="text/javascript">
+	$(function() {
+		$('#type').change(function() {
+			updateFields();
+		});
+		
+		updateFields();
+	});
+	
+	function updateFields() {
+		var value = $('#type').val();
+		$('#extra').empty();
+		if(value == 'item') {
+			$('#extra').append('<input type="number" name="item_id" style="width: 120px;" min="100" placeholder="Item ID" required/>');
+			$('#extra').append('<input type="number" name="item_count" style="width: 120px;" min="1" max="100" placeholder="Item Count" required/>');
+		}
+		else if(value == 'container') {
+			$('#extra').append('<input type="number" name="item_id" style="width: 120px;" min="100" placeholder="Item ID" required/>');
+			$('#extra').append('<input type="number" name="item_count" style="width: 120px;" min="1" max="100" placeholder="Item Count" required/>');
+			$('#extra').append('<input type="number" name="container_id" style="width: 120px;" min="100" placeholder="Container ID" required/>');
+			$('#extra').append('<input type="number" name="container_count" style="width: 120px;" min="1" max="100" placeholder="Container Count" required/>');
+		}
+		else if(value == 'addon') {
+			$('#extra').append('<input type="number" name="look_female" style="width: 180px;" min="1" placeholder="Female (girl) Look Type" required/>');
+			$('#extra').append('<input type="number" name="addons_female" style="width: 240px;" min="1" max="3" placeholder="Female Addons (1, 2 or 3 for both)" required/>');
+			$('#extra').append('<br/><input type="number" name="look_male" style="width: 180px;" min="1" placeholder="Male (boy) Look Type" required/>');
+			$('#extra').append('<input type="number" name="addons_male" style="width: 240px;" min="1" max="3" placeholder="Male Addons (1, 2 or 3 for both)" required/>');
+		}
+		else if(value == 'mount') {
+			$('#extra').append('<input type="number" name="mount_id" min="1" style="width: 240px;" placeholder="Mount ID (take from mounts.xml)" required/>');
+		}
+		else if(value == 'pacc') {
+			$('#extra').append('<input type="number" name="days" min="1" placeholder="Premium Days" required/>');
+		}
+	}
+</script>
+<style>
+	.hidden {
+		display: none;
+	}
+</style>

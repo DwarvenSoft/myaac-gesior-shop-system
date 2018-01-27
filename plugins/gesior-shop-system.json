@@ -1,8 +1,8 @@
 {
-     "name": "Gesior Shop System",
-	 "description": "This is shop system taken from Gesior, modified for MyAAC.",
-     "version": "1.1",
-	 "author": "Gesior (modified by slawkens)",
-	 "contact": "slawkens@gmail.com", 
-	 "install": "plugins/gesior-shop-system/install.php"
+	"name": "gesior-shop-system",
+	"description": "This is shop system taken from Gesior, modified for MyAAC.",
+	"version": "2.0-beta",
+	"author": "Gesior (modified by slawkens)",
+	"contact": "slawkens@gmail.com", 
+	"install": "plugins/gesior-shop-system/install.php"
  }

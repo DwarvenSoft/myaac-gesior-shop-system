@@ -1,0 +1,23 @@
+[2.0 - xx.xx.2018]
+	* new payment gateway: GoUrl.io (CryptoBox global Coins - bitcoins, speedcoin, dash and more)
+	* new payment gateway: fortumo.com (SMS Worldwide)
+	* new payment gateway: PagSeguro (Brazil payments)
+	* new payment gateway: homepay.pl (Poland SMS and Bank Transfer)
+	* simple admin panel for adding offers
+	* support for new offers: pacc, addons, mounts, unban, redskull
+	* cleaner buy points page (with images for gateways)
+	* general folder structure reorganisation (more clean now)
+	* removed support for zaypay as it doesn't exist anymore
+	* you can now hide item from showing by settings hidden to 1 in z_shop_offer table
+	* fixed some php notices and warnings
+	* fixed mysql error - Duplicate entry 'x' for key 'PRIMARY'
+	* renamed z_shop_history_item to z_shop_history (it will store history from all)
+	* general optimizations
+	* added CHANGELOG
+
+[1.1 - 31.07.2017]
+	* new Paypal API
+	* some small fixes
+
+[1.0 - 02.05.2017]
+	* First release of Gesior Shop System for MyAAC
