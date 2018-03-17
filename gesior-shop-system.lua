@@ -43,7 +43,7 @@ end
 
 if(not doPlayerSave) then
 	function doPlayerSave(cid)
-		if(Player) then
+		if(Player and type(Player) == "table" and Player.save and type(Player.save) == "function") then
 			local player = Player(cid)
 			if(player) then
 				player:save()
