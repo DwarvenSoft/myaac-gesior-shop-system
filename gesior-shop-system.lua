@@ -177,6 +177,7 @@ function onThink(interval)
 			local received_item = 0
 			local full_weight = 0
 			if(add_item_type == 'container') then
+				local items_weight = 0
 				container_weight = getItemWeightById(param3, 1)
 				if(isItemRune(param1)) then
 					items_weight = param4 * getItemWeightById(param1, 1)
