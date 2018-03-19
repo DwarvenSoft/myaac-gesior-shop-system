@@ -719,7 +719,7 @@ function getOfferArray()
 										}
 										elseif($buy_offer['type'] == 'item')
 										{
-											$query = 'INSERT INTO '.$db->tableName('z_ots_comunication').' (id, name, type, action, param1, param2, param3, param4, param5, param6, param7, delete_it) VALUES (NULL, '.$db->quote($buy_player->getName()).', \'login\', \'give_item\', '.$db->quote($buy_offer['item_id']).', '.$db->quote($buy_offer['item_count']).', \'\', \'\', \'item\', '.$db->quote($buy_offer['name']).', \'\', \'1\');';
+											$query = 'INSERT INTO '.$db->tableName('z_ots_comunication').' (id, name, type, action, param1, param2, param3, param4, param5, param6, param7, delete_it) VALUES (NULL, '.$db->quote($buy_player->getName()).', \'login\', \'give_item\', '.$db->quote($buy_offer['item_id']).', '.$db->quote($buy_offer['item_count']).', 0, 0, \'item\', '.$db->quote($buy_offer['name']).', \'\', \'1\');';
 											$db->query($query);
 											$save_transaction = 'INSERT INTO '.$db->tableName('z_shop_history').' (id, comunication_id, to_name, to_account, from_nick, from_account, price, offer_id, trans_state, trans_start, trans_real) VALUES (NULL, '.$db->lastInsertId().', '.$db->quote($buy_player->getName()).', '.$db->quote($buy_player_account->getId()).', '.$db->quote($buy_from).',  '.$db->quote($account_logged->getId()).', '.$db->quote($buy_offer['points']).', '.$db->quote($buy_offer['id']).', \'wait\', '.$db->quote(time()).', \'0\');';
 											$db->query($save_transaction);
@@ -739,7 +739,7 @@ function getOfferArray()
 										}
 										elseif($buy_offer['type'] == 'mount')
 										{
-											$query = 'INSERT INTO '.$db->tableName('z_ots_comunication').' (id, name, type, action, param1, param5, param6, param7, delete_it) VALUES (NULL, '.$db->quote($buy_player->getName()).', \'login\', \'give_item\', '.$db->quote($buy_offer['mount_id']).', \'mount\', '.$db->quote($buy_offer['name']).', \'\', \'1\');';
+											$query = 'INSERT INTO '.$db->tableName('z_ots_comunication').' (id, name, type, action, param1, param2, param3, param4, param5, param6, param7, delete_it) VALUES (NULL, '.$db->quote($buy_player->getName()).', \'login\', \'give_item\', '.$db->quote($buy_offer['mount_id']).', 0, 0, 0, \'mount\', '.$db->quote($buy_offer['name']).', \'\', \'1\');';
 											$db->query($query);
 											$save_transaction = 'INSERT INTO '.$db->tableName('z_shop_history').' (id, comunication_id, to_name, to_account, from_nick, from_account, price, offer_id, trans_state, trans_start, trans_real) VALUES (NULL, '.$db->lastInsertId().', '.$db->quote($buy_player->getName()).', '.$db->quote($buy_player_account->getId()).', '.$db->quote($buy_from).',  '.$db->quote($account_logged->getId()).', '.$db->quote($buy_offer['points']).', '.$db->quote($buy_offer['id']).', \'wait\', '.$db->quote(time()).', \'0\');';
 											$db->query($save_transaction);

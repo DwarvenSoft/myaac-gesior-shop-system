@@ -22,8 +22,12 @@ $ip = $_SERVER['REMOTE_ADDR'];
 
 require(LIBS . 'paypal.php');
 $ipn = new PaypalIPN();
+
 // Use the sandbox endpoint during testing.
-//$ipn->useSandbox();
+if(isset($config['paypal']['use_sandbox']) && $config['paypal']['use_sandbox']) {
+	$ipn->useSandbox();
+}
+
 $ipn->usePHPCerts();
 $verified = $ipn->verifyIPN();
 if (!$verified) {
