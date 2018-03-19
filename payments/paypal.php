@@ -48,7 +48,8 @@ $payer_status = $_REQUEST['payer_status'];
 
 $time = date('d.m.Y, H:i');
 
-if(strtolower($payment_status) == 'completed' && $business == $config['paypal']['email'] && isset($paylist[$mc_gross]) && $mc_currency == 'EUR')
+if(strtolower($payment_status) == 'completed' && $business == $config['paypal']['email']
+	&& isset($paylist[$mc_gross]) && strtolower($mc_currency) == strtolower($config['paypal']['currency_code']))
 {
 	$account = new OTS_Account();
 	$account->load($custom);
