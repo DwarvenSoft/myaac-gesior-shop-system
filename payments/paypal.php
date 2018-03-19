@@ -53,7 +53,7 @@ if(strtolower($payment_status) == 'completed' && $business == $config['paypal'][
 	$account = new OTS_Account();
 	$account->load($custom);
 	if($account->isLoaded()) {
-		if(add_points($custom, $paylist[$mc_gross])) {
+		if(add_points($account, $paylist[$mc_gross])) {
 			log_append('paypal.log', "$time;$custom;$payer_email;$mc_gross:$mc_currency;$mc_fee;$receiver_email;$payment_status;$ip;$business;$address_status;$payer_status");
 		}
 	}
