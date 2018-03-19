@@ -1,4 +1,12 @@
-[2.0 - xx.xx.2018]
+[2.0 - 19.03.2018]
+	* fixed PayPal IPN not delivering points
+	* more configuration options for paypal
+	* fixed PayPal currency other than EUR
+	* fixed some errors in console (othire and others) (Lua script)
+	* fix where container or item doesn't exist (Lua script)
+	* added shebang line to the bash script
+
+[2.0-beta - 28.01.2018]
 	* new payment gateway: GoUrl.io (CryptoBox global Coins - bitcoins, speedcoin, dash and more)
 	* new payment gateway: fortumo.com (SMS Worldwide)
 	* new payment gateway: PagSeguro (Brazil payments)
