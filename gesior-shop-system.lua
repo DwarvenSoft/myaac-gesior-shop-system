@@ -150,6 +150,20 @@ if(not getItemWeightById) then
 	getItemWeightById = getItemWeight
 end
 
+if(not doCreateItemEx) then
+	function doCreateItemEx(itemid, count)
+		if(Game and type(Game) == "table" and Game.createItem and type(Game.createItem) == "function") then
+			local item = Game.createItem(itemid, count)
+			if item then
+				return item:getUniqueId()
+			end
+			return false
+		else
+			print("[ERROR - gesior-shop-system] Error code: 1. Please contact slawkens at www.otland.net")
+		end
+	end
+end
+
 function onThink(interval)
 	if(interval > 1000) then
 		interval = interval / 1000
