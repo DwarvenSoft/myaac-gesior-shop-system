@@ -443,7 +443,7 @@ function getOfferArray()
 		{
 			foreach($offer_list['pacc'] as $pacc)
 			{
-				echo '<tr bgcolor="'.$config['lightborder'].'"><td align="center"><img src="images/payments/PremiumTime.png" alt="Premium Time"/></td><td><b>'.$pacc['name'].'</b><br />'.$pacc['description'].'</td><td align="center">'.$pacc['points'].'</td><td align="center">';
+				echo '<tr bgcolor="'.$config['lightborder'].'"><td align="center"><img src="images/shop-system/PremiumTime.png" alt="Premium Time"/></td><td><b>'.$pacc['name'].'</b><br />'.$pacc['description'].'</td><td align="center">'.$pacc['points'].'</td><td align="center">';
 				if(!$logged)
 					echo '<b>Login to buy</b>';
 				else
@@ -552,6 +552,7 @@ function getOfferArray()
 				$mount_image = 'images/shop-system/mounts_category.png';
 				if(isset($config['mounts']) && $config['mounts'][$mount['mount_id']]) {
 					$mount_image = $config['outfit_images_url'] . '?id=' . $config['mounts'][$mount['mount_id']] . '&addons=0&head=' . $config['shop_outfit_colors']['head'] . '&body=' . $config['shop_outfit_colors']['body'] . '&legs=' . $config['shop_outfit_colors']['legs'] . '&feet=' . $config['shop_outfit_colors']['feet'];
+					//$mount_image = BASE_URL . 'images/mounts/' . $mount['mount_id'] '.png';
 				}
 
 				echo '<tr bgcolor="'.$config['lightborder'].'">
