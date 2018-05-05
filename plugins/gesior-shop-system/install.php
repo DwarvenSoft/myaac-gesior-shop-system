@@ -15,16 +15,16 @@ if(!tableExist('z_ots_comunication'))
 	$db->query("
 CREATE TABLE `z_ots_comunication` (
 	`id` INT(11) NOT NULL auto_increment,
-	`name` VARCHAR(255) NOT NULL,
-	`type` VARCHAR(255) NOT NULL,
-	`action` VARCHAR(255) NOT NULL,
-	`param1` VARCHAR(255) NOT NULL,
-	`param2` VARCHAR(255) NOT NULL,
-	`param3` VARCHAR(255) NOT NULL,
-	`param4` VARCHAR(255) NOT NULL,
-	`param5` VARCHAR(255) NOT NULL,
-	`param6` VARCHAR(255) NOT NULL,
-	`param7` VARCHAR(255) NOT NULL,
+	`name` VARCHAR(255) NOT NULL DEFAULT '',
+	`type` VARCHAR(255) NOT NULL DEFAULT '',
+	`action` VARCHAR(255) NOT NULL DEFAULT '',
+	`param1` VARCHAR(255) NOT NULL DEFAULT '',
+	`param2` VARCHAR(255) NOT NULL DEFAULT '',
+	`param3` VARCHAR(255) NOT NULL DEFAULT '',
+	`param4` VARCHAR(255) NOT NULL DEFAULT '',
+	`param5` VARCHAR(255) NOT NULL DEFAULT '',
+	`param6` VARCHAR(255) NOT NULL DEFAULT '',
+	`param7` VARCHAR(255) NOT NULL DEFAULT '',
 	`delete_it` INT(2) NOT NULL DEFAULT '1',
 	PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM;
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `z_shop_history` (
 	`comunication_id` INT(11) NOT NULL DEFAULT 0,
 	`to_name` VARCHAR(255) NOT NULL DEFAULT 0,
 	`to_account` INT(11) NOT NULL DEFAULT 0,
-	`from_nick` VARCHAR(255) NOT NULL,
+	`from_nick` VARCHAR(255) NOT NULL DEFAULT '',
 	`from_account` INT(11) NOT NULL DEFAULT 0,
 	`price` INT(11) NOT NULL DEFAULT 0,
 	`offer_id` INT(11) NOT NULL DEFAULT 0,
@@ -89,8 +89,8 @@ CREATE TABLE IF NOT EXISTS `z_shop_offer` (
 	`itemid2` INT(11) NOT NULL DEFAULT 0,
 	`count2` INT(11) NOT NULL DEFAULT 0,
 	`offer_type` VARCHAR(255) DEFAULT NULL,
-	`offer_description` text NOT NULL,
-	`offer_name` VARCHAR(255) NOT NULL,
+	`offer_description` text NOT NULL DEFAULT '',
+	`offer_name` VARCHAR(255) NOT NULL DEFAULT '',
 	`hidden` TINYINT(1) NOT NULL DEFAULT 0,
 	PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM;
