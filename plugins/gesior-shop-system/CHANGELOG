@@ -1,3 +1,6 @@
+[?]
+	* fixed default value of some MySQL columns
+
 [2.0 - 19.03.2018]
 	* fixed PayPal IPN not delivering points
 	* more configuration options for paypal
