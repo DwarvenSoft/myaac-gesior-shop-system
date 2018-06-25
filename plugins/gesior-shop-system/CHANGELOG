@@ -1,5 +1,7 @@
 [?]
+	* fix for OTXServer, where doCreateItemEx function doesn't exists (in some older versions)
 	* fixed default value of some MySQL columns
+	* fixed Premium Account image (was wrong dir)
 
 [2.0 - 19.03.2018]
 	* fixed PayPal IPN not delivering points
