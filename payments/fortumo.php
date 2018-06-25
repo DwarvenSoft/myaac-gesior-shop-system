@@ -6,7 +6,7 @@
  * @author    Gesior <jerzyskalski@wp.pl>
  * @author    Slawkens <slawkens@gmail.com>
  * @website   github.com/slawkens/myaac-gesior-shop-system
- * @version   2.0
+ * @version   2.1
  */
 
 require_once('../common.php');

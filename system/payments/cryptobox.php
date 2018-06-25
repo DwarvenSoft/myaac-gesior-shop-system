@@ -5,7 +5,7 @@
  * @name      myaac-gesior-shop-system
  * @author    Slawkens <slawkens@gmail.com>
  * @website   github.com/slawkens/myaac-gesior-shop-system
- * @version   2.0
+ * @version   2.1
  */
 defined('MYAAC') or die('Direct access not allowed!');
 
