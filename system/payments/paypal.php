@@ -20,17 +20,9 @@ if(!$logged) {
 	return;
 }
 
-$was_before = $config['friendly_urls'];
-$config['friendly_urls'] = false;
-if($config['paypal']['terms'] && !isset($_REQUEST['agree']))
-{
-	echo $twig->render('gesior-shop-system/paypal-terms.html.twig');
+if(!function_exists('curl_init')) {
+	error(sprintf("Error. Please enable <a target='_blank' href='%s'>CURL extension</a> in PHP. <a target='_blank' href='%s'>Read here &#187;</a>", "http://php.net/manual/en/book.curl.php", "http://stackoverflow.com/questions/1347146/how-to-enable-curl-in-php-xampp"));
 	return;
-}
-
-if(empty($config['paypal']['contact_email'])) {
-	$config['paypal']['contact_email'] = $config['paypal']['email'];
-	$twig->addGlobal('config', $config);
 }
 
 if(!in_array($config['paypal']['payment_type'], array('_xclick', '_donations'))) {
@@ -44,6 +36,19 @@ if($is_localhost) {
 	This site is visible, but you can't donate.");
 }
 
-echo $twig->render('gesior-shop-system/paypal.html.twig', array('is_localhost' => $is_localhost));
+$was_before = $config['friendly_urls'];
+$config['friendly_urls'] = false;
+if(empty($config['paypal']['contact_email'])) {
+	$config['paypal']['contact_email'] = $config['paypal']['email'];
+	$twig->addGlobal('config', $config);
+}
+
+if($config['paypal']['terms'] && !isset($_REQUEST['agree'])) {
+	$twig->display('gesior-shop-system/paypal-terms.html.twig');
+}
+else {
+	$twig->display('gesior-shop-system/paypal.html.twig', array('is_localhost' => $is_localhost));
+}
+
 $config['friendly_urls'] = $was_before;
 ?>

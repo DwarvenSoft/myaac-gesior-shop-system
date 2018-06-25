@@ -183,4 +183,9 @@ CREATE TABLE IF NOT EXISTS `pagseguro_transactions` (
 		");
 	success('Imported pagseguro_transactions table to database.');
 }
+
+if(!function_exists('curl_init')) {
+	error(sprintf("Error. Please enable <a target='_blank' href='%s'>CURL extension</a> in PHP. <a target='_blank' href='%s'>Read here &#187;</a> Paypal, Cryptobox and PagSeguro will not work correctly without it.", "http://php.net/manual/en/book.curl.php", "http://stackoverflow.com/questions/1347146/how-to-enable-curl-in-php-xampp"));
+	return;
+}
 ?>

@@ -1,4 +1,5 @@
-[?]
+[2.1]
+	* check for php CURL extension on install and when running
 	* fix for OTXServer, where doCreateItemEx function doesn't exists (in some older versions)
 	* fixed default value of some MySQL columns
 	* fixed Premium Account image (was wrong dir)
