@@ -1,4 +1,4 @@
-[2.1]
+[2.1 - 26.06.2018]
 	* check for php CURL extension on install and when running
 	* fix for OTXServer, where doCreateItemEx function doesn't exists (in some older versions)
 	* fixed default value of some MySQL columns
