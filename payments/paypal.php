@@ -27,7 +27,6 @@ if(isset($config['paypal']['use_sandbox']) && $config['paypal']['use_sandbox']) 
 	$ipn->useSandbox();
 }
 
-$ipn->usePHPCerts();
 $verified = $ipn->verifyIPN();
 if (!$verified) {
 	log_append('paypal_scammer.log', $ip);

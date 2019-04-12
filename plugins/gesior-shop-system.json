@@ -1,9 +1,9 @@
 {
 	"name": "gesior-shop-system",
 	"description": "This is shop system taken from Gesior, modified for MyAAC.",
-	"version": "2.1",
+	"version": "2.1.1",
 	"author": "Gesior (modified by slawkens)",
-	"contact": "slawkens@gmail.com", 
+	"contact": "slawkens@gmail.com",
 	"install": "plugins/gesior-shop-system/install.php",
 	"require": {
 		"php-ext": "curl"

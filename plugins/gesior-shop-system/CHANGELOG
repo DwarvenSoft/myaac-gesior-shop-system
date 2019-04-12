@@ -1,3 +1,6 @@
+[2.1.1 - 13.04.2019]
+	* enable local certificate (fixes points being not delivered on same rare systems)
+
 [2.1 - 26.06.2018]
 	* check for php CURL extension on install and when running
 	* fix for OTXServer, where doCreateItemEx function doesn't exists (in some older versions)
