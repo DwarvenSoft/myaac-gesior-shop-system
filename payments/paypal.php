@@ -8,11 +8,11 @@
  * @website   github.com/slawkens/myaac-gesior-shop-system
  */
 
-require_once('../common.php');
-require_once(SYSTEM . 'functions.php');
-require_once(SYSTEM . 'init.php');
-require_once(LIBS . 'shop-system.php');
-require_once(PLUGINS . 'gesior-shop-system/config.php');
+require_once '../common.php';
+require_once SYSTEM . 'functions.php';
+require_once SYSTEM . 'init.php';
+require_once LIBS . 'shop-system.php';
+require_once PLUGINS . 'gesior-shop-system/config.php';
 
 if(!isset($config['paypal']) || !count($config['paypal']) || !count($config['paypal']['options']))
 	die('PayPal disabled.');

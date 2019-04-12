@@ -62,9 +62,9 @@ class PaypalIPN
     {
         if ($this->use_sandbox) {
             return self::SANDBOX_VERIFY_URI;
-        } else {
-            return self::VERIFY_URI;
         }
+
+        return self::VERIFY_URI;
     }
 
 
