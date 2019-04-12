@@ -1,6 +1,7 @@
 [2.1.1 - 13.04.2019]
-	* enable local certificate verification (fixes points being not delivered on same rare systems)
+	* enable local SSL certificate verification (this fixes points being not delivered on same systems like UniServ on Windows)
 	* write more debug/error informations to paypal-error.log
+	* (internal) remove @version tag from files
 
 [2.1 - 26.06.2018]
 	* check for php CURL extension on install and when running
