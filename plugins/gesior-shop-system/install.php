@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `z_shop_offer` (
 	`itemid2` INT(11) NOT NULL DEFAULT 0,
 	`count2` INT(11) NOT NULL DEFAULT 0,
 	`offer_type` VARCHAR(255) DEFAULT NULL,
-	`offer_description` text NOT NULL DEFAULT '',
+	`offer_description` text NOT NULL,
 	`offer_name` VARCHAR(255) NOT NULL DEFAULT '',
 	`hidden` TINYINT(1) NOT NULL DEFAULT 0,
 	PRIMARY KEY  (`id`)
