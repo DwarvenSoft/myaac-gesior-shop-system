@@ -50,4 +50,3 @@ else {
 }
 
 $config['friendly_urls'] = $was_before;
-?>

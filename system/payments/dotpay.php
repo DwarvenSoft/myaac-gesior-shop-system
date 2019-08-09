@@ -93,7 +93,7 @@ if(isset($_POST['sms_type'])) {
 			if($code_info[3] == "0.00")
 				$points_to_add = $config['dotpay']['options'][$sms_type]['points'];
 
-			if($points_to_add > 0 && add_points($account_logged, $points_to_add))
+			if($points_to_add > 0 && GesiorShop::changePoints($account_logged, $points_to_add))
 			{
 				$time = date('d.m.Y,g:i A');
 				$account_id = $account_logged->getId();

@@ -50,7 +50,6 @@ $enabled = array(
 	'daopay' => isset($config['daopay']) && $config['daopay']['enabled'],
 	'pagseguro' => isset($config['pagseguro']) && $config['pagseguro']['enabled'],
 	'dotpay' => isset($config['dotpay']) && $config['dotpay']['enabled'],
-	'homepay' => isset($config['homepay']) && $config['homepay']['enabled'],
 );
 
 if(isset($_GET['system'])) {

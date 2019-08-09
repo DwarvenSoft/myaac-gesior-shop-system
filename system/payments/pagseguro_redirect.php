@@ -41,5 +41,3 @@ try {
 } catch (PagSeguroServiceException $e) {
 	die($e->getMessage());
 }
-
-?>

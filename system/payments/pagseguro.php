@@ -41,4 +41,3 @@ if(empty($action)) {
 elseif($action == 'final') {
 	echo $twig->render('gesior-shop-system/donate-final.html.twig');
 }
-?>

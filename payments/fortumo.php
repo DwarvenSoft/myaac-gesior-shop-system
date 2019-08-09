@@ -8,11 +8,11 @@
  * @website   github.com/slawkens/myaac-gesior-shop-system
  */
 
-require_once('../common.php');
-require_once(SYSTEM . 'functions.php');
-require_once(SYSTEM . 'init.php');
-require_once(LIBS . 'shop-system.php');
-require_once(PLUGINS . 'gesior-shop-system/config.php');
+require_once '../common.php';
+require_once SYSTEM . 'functions.php';
+require_once SYSTEM . 'init.php';
+require_once LIBS . 'shop-system.php';
+require_once PLUGINS . 'gesior-shop-system/config.php';
 
 if(!isset($config['fortumo']) || !count($config['fortumo']) || empty($config['fortumo']['service_id'])) {
 	log_append('fortumo_debug.log', 'Fortumo is disabled. IP: ' . $_SERVER['REMOTE_ADDR']);
@@ -46,7 +46,7 @@ $account_id = (int)$_GET['cuid'];
 $account->load($account_id);
 if($account->isLoaded()) {
 	$points = (int)$_GET['amount'];
-	if(add_points($account, $points)) {
+	if(GesiorShop::changePoints($account, $points)) {
 		$time = date('d.m.Y, g:i A');
 		$account_id = $account->getId();
 		$price = $_GET['price'];
@@ -78,4 +78,3 @@ function check_signature($params_array, $secret)
 
 	return ($params_array['sig'] == $signature);
 }
-?>
