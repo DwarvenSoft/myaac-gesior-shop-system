@@ -31,11 +31,11 @@
  *
  */
 
-require_once('../common.php');
-require_once(SYSTEM . 'functions.php');
-require_once(SYSTEM . 'init.php');
-require_once(LIBS . 'shop-system.php');
-require_once(PLUGINS . 'gesior-shop-system/config.php');
+require_once '../common.php';
+require_once SYSTEM . 'functions.php';
+require_once SYSTEM . 'init.php';
+require_once LIBS . 'shop-system.php';
+require_once PLUGINS . 'gesior-shop-system/config.php';
 
 if(!defined("CRYPTOBOX_WORDPRESS")) define("CRYPTOBOX_WORDPRESS", false);
 
@@ -155,6 +155,4 @@ else
 	$box_status = "Only POST Data Allowed";
 
 
-	echo $box_status; // don't delete it 
- 
-?>
+	echo $box_status; // don't delete it

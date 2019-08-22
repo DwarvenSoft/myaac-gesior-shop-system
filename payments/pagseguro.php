@@ -10,11 +10,12 @@
  * @version   1.1.1
  */
 
-require_once('../common.php');
-require_once(SYSTEM . 'functions.php');
-require_once(SYSTEM . 'init.php');
-require_once(PLUGINS . 'gesior-shop-system/config.php');
-require_once(LIBS . 'PagSeguroLibrary/PagSeguroLibrary.php');
+require_once '../common.php';
+require_once SYSTEM . 'functions.php';
+require_once SYSTEM . 'init.php';
+require_once LIBS . 'shop-system.php';
+require_once PLUGINS . 'gesior-shop-system/config.php';
+require_once LIBS . 'PagSeguroLibrary/PagSeguroLibrary.php';
 
 if(!isset($config['pagseguro']) || !$config['pagseguro']['enabled']) {
 	echo "PagSeguro is disabled. If you're an admin please configure this script in plugins/gesior-shop-system/config.php.";
@@ -56,7 +57,7 @@ if('post' == strtolower($method)) {
 
 					$field = GesiorShop::getDonationType();
 
-					$stmt = $conn->prepare('UPDATE accounts SET ' . $field . ' = ' . $field . ' + :item_count WHERE ' . (USE_ACCOUNT_NAME ? 'id' : 'name') . ' = :account');
+					$stmt = $conn->prepare('UPDATE accounts SET ' . $field . ' = ' . $field . ' + :item_count WHERE ' . (USE_ACCOUNT_NAME ? 'name' : 'id') . ' = :account');
 					$stmt->execute(array('item_count' => $arrayPDO['item_count'], 'account' => $arrayPDO['account']));
 
 					$stmt = $conn->prepare("UPDATE pagseguro_transactions SET status = 'DELIVERED' WHERE transaction_code = :transaction_code AND status = 'PAID'");
@@ -70,5 +71,3 @@ if('post' == strtolower($method)) {
 		}
 	}
 }
-
-?>

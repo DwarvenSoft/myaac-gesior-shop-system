@@ -126,7 +126,7 @@ function cryptobox_new_payment($paymentID = 0, $payment_details = array(), $box_
 		$account = new OTS_Account();
 		$account->load($payment_details["user"]);
 		if($account->isLoaded()) {
-			add_points($account, $points);
+			GesiorShop::changePoints($account, $points);
 		}
 
 		$sql = "UPDATE crypto_payments SET processed = 1, processedDate = '".gmdate("Y-m-d H:i:s")."' WHERE paymentID = ".intval($paymentID)." LIMIT 1";

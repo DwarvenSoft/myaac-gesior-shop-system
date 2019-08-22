@@ -71,7 +71,7 @@ if(!isset($paylist[$mc_gross])) {
 $account = new OTS_Account();
 $account->load($custom);
 if($account->isLoaded()) {
-	if(add_points($account, $paylist[$mc_gross])) {
+	if(GesiorShop::changePoints($account, $paylist[$mc_gross])) {
 		log_append('paypal.log', "$time;$custom;$payer_email;$mc_gross:$mc_currency;$mc_fee;$receiver_email;$payment_status;$ip;$business;$address_status;$payer_status");
 	}
 }

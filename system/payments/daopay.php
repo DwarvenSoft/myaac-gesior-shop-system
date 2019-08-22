@@ -65,7 +65,7 @@ function check_code_daopay($appcode, $prodcode, $pin)
 				$errors[] = 'Wrong PIN code, try to enter code again.';
 			elseif($code_info == 1)
 			{
-				if(add_points($account, $config['daopay']['options'][$offer_id]['points']))
+				if(GesiorShop::changePoints($account, $config['daopay']['options'][$offer_id]['points']))
 				{
 					$time = date('d.m.Y, g:i A');
 					$account_id = $account->getId();
