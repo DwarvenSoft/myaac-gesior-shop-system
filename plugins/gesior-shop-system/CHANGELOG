@@ -1,6 +1,14 @@
+[2.2 - 02.12.2019]
+	* Fix installation on some newest MySQL versions (slawkens)
+	* Refactored code: (whiteblXK)
+		* moved 'add offer' to admin panel
+		* removed Homepay service
+		* fixed delivering points in PagSeguro
+		* full twig template support
+
 [2.1.1 - 13.04.2019]
 	* enable local SSL certificate verification (this fixes points being not delivered on same systems like UniServ on Windows)
-	* write more debug/error informations to paypal-error.log
+	* write more debug/error information to paypal-error.log
 	* (internal) remove @version tag from files
 
 [2.1 - 26.06.2018]
